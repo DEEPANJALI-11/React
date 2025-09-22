@@ -1,0 +1,16 @@
+const reactElement={
+    type:'a',
+    props:{
+        href:"https://google.com",
+        target:"_blank"
+    },
+    children:'click me to visit google'
+}
+
+const main=document.querySelector('#root')
+
+function customRender(reactElement,container){
+    const domElement=document.createElement(reactElement.type)
+    domElement.innerHtml=reactElement.children
+}
+customRender(reactElement,mainContainer)
