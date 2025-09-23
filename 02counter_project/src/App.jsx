@@ -11,12 +11,23 @@ function App() {
   const addValue=()=>{
     counter=counter+1
     setCounter(counter)
+    
+    setCounter(counter)
+    setCounter(counter)
+    setCounter(counter)
+    setCounter(counter) 
+    // useState will only update counter only once, all are in same batch, that why fiber was introduced 
+
+    // setCounter((prevCounter)=> prevCounter+1) 
+    // //now it will work for multiple times
+
     console.log('value Added',{counter});
     
   }
   const removeValue=()=>{
-    counter-=1
-    setCounter(counter)
+    // counter-=1
+    if(counter>0)
+      setCounter(counter-1)
   }
   return (
     <>
